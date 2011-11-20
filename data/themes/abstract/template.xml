@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<template>
+  <author></author>
+  <version></version>
+  <copyright />
+  <transformations>
+    <transformation query="copy" writer="FileIo" source="js" artifact="js"/>
+    <transformation query="copy" writer="FileIo" source="images" artifact="images"/>
+    <transformation query="copy" writer="FileIo" source="themes/abstract/css" artifact="css"/>
+    <transformation query="copy" writer="FileIo" source="themes/abstract/js" artifact="js"/>
+    <transformation query="copy" writer="FileIo" source="themes/default/images" artifact="images"/>
+    <transformation query="" writer="xsl" source="themes/abstract/index.xsl" artifact="index.html"/>
+    <transformation query="" writer="xsl" source="themes/abstract/sidebar.xsl" artifact="nav.html">
+        <parameters>
+            <variables>
+                <section.dashboard.show>false</section.dashboard.show>
+                <section.api.show/>
+                <section.namespaces.show/>
+                <section.packages.show/>
+                <section.files.show/>
+                <section.files.show-elements>false</section.files.show-elements>
+                <section.reports.show>false</section.reports.show>
+                <section.charts.show>false</section.charts.show>
+            </variables>
+        </parameters>
+    </transformation>
+    <transformation query="/project/file/@path" writer="xsl" source="themes/abstract/api-doc.xsl" artifact="{$path}"/>
+  </transformations>
+</template>

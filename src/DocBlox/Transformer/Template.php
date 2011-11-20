@@ -158,10 +158,10 @@ class DocBlox_Transformer_Template
                 (string)$transformation['artifact']
             );
 
-            if (isset($transformation['parameters'])
-                && count($transformation['parameters'])
+            if (isset($transformation->parameters)
+                && count((array)$transformation->parameters)
             ) {
-                $transformation_obj->setParameters($transformation['parameters']);
+                $transformation_obj->setParameters((array)$transformation->parameters);
             }
 
             $this->transformations[] = $transformation_obj;

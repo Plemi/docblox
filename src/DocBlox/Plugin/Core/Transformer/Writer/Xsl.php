@@ -155,7 +155,7 @@ class DocBlox_Plugin_Core_Transformer_Writer_Xsl
         if (isset($parameters['variables'])) {
             /** @var DOMElement $variable */
             foreach ($parameters['variables'] as $key => $value) {
-                $proc->setParameter('', $key, $value);
+                $proc->setParameter('', (string)$key, (string)$value);
             }
         }
     }
